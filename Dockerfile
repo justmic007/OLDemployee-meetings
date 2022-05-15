@@ -1,4 +1,4 @@
-FROM  node:12.16.3-alpine as ts-build
+FROM  node:14.19.1-alpine3.14 as ts-build
 
 # Arguments
 ARG NODE_ENV
@@ -23,7 +23,7 @@ COPY . .
 # Compile TS to JS
 RUN yarn build
 
-FROM node:12.16.3-alpine as build
+FROM node:14.19.1-alpine3.14 as build
 
 # Create app directory
 ENV APP_DIR=/usr/app/api \
