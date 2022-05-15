@@ -2,11 +2,11 @@ import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConne
 
 const config: PostgresConnectionOptions = {
   type: 'postgres',
-  host: 'localhost',
+  host: process.env.POSTGRES_HOST,
   port: 5432,
-  username: 'user',
-  password: 'password',
-  database: 'db',
+  username: process.env.POSTGRES_USER,
+  password: process.env.POSTGRES_PASSWORD,
+  database: process.env.POSTGRES_DB,
   synchronize: false,
   logging: true,
   entities: ['dist/src/**/*.entity.js'],
